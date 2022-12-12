@@ -1,44 +1,49 @@
 #include <stdio.h>
 /**
- ** main - main block
- ** Description: prints all possible combinations of two two-digit numbers
- ** The numbers should range from 0 to 99
- ** All numbers should be printed with two digits
- ** 1 should be printed as 01
- ** The combination of numbers must be
- ** separated by comma, followed by a space
- ** The combinations of numbers should be
- ** printed in ascending order
- ** Return: 0
- **/
+ * main - main block
+ * Description:
+ * prints all possible combinations of two two-digit numbers
+ * The numbers should range from 0 to 99
+ * Return: 0
+ */
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int l_d;
-	int c2;
-	int f_d2;
-	int l_d2;
+	int a = 0;
+	int b1;
+	int b2;
 
-	while (c <= 98)
+	int a2;
+	int c1;
+	int c2;
+
+	while (a <= 98)
 	{
-		f_d = (c / 10 + '0');
-		l_d = (c % 10 + '0');
-		if (c < c2)
+		b1 = (a / 10 + '0');
+		b2 = (a % 10 + '0');
+		a2 = 0;
+
+		while (a2 <= 99)
 		{
-			putchar(f_d);
-			putchar(l_d);
-			putchar(' ');
-			putchar(f_d2);
-			putchar(l_d2);
-			if (c != 98)
+			c1 = (a2 / 10 + '0');
+			c2 = (a2 % 10 + '0');
+
+			if (a < a2)
 			{
+			putchar(b1);
+			putchar(b2);
+			putchar(' ');
+			putchar(c1);
+			putchar(c2);
+
+				if (a != 98)
+				{
 				putchar(',');
 				putchar(' ');
+				}
 			}
-			c2++;
+			a2++;
 		}
-		c++;
+		a++;
 	}
 	putchar('\n');
 	return (0);
